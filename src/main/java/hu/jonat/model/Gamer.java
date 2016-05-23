@@ -71,9 +71,12 @@ public class Gamer {
      */
     private double matchAverage;
     /**
-     * Logger instance.
+     * A játékos minden dobás utáni átlagai.
      */
     private ArrayList<Double> matchAverages;
+    /**
+     * Logger instance.
+     */
     static Logger LOG = LoggerFactory.getLogger(Gamer.class);
 
 
@@ -206,26 +209,50 @@ public class Gamer {
         this.darts = darts;
     }
 
+    /**
+     * Visszaadja a játékos pontjainak a listáját.
+     * @return játékos pontjainak listája
+     */
     public ArrayList<Integer> getPontok() {
         return pontok;
     }
 
+    /**
+     * Beállítja a játékos pontjainak listáját.
+     * @param pontok pontok listája
+     */
     public void setPontok(ArrayList<Integer> pontok) {
         this.pontok = pontok;
     }
 
+    /**
+     * Visszaadja a játékos legjeinek a listáját.
+     * @return játékos legjeinek listája
+     */
     public ArrayList<Integer> getLegs() {
         return legs;
     }
 
+    /**
+     * Beállítja a játékos legjeinek listáját.
+     * @param legs pontok listája
+     */
     public void setLegs(ArrayList<Integer> legs) {
         this.legs = legs;
     }
 
+    /**
+     * Visszaadja a játékos setjeinek a listáját.
+     * @return játékos setjeinek listája
+     */
     public ArrayList<Integer> getSets() {
         return sets;
     }
 
+    /**
+     * Beállítja a játékos setjeinek listáját.
+     * @param sets pontok listája
+     */
     public void setSets(ArrayList<Integer> sets) {
         this.sets = sets;
     }
@@ -357,11 +384,20 @@ public class Gamer {
         this.matchAverage = matchAverage;
     }
 
-
+    /**
+     * Visszaadja a játékos meccs átlagainak listáját.
+     *
+     * @return a játékos meccs átlagainak listája
+     */
     public ArrayList<Double> getMatchAverages() {
         return matchAverages;
     }
 
+    /**
+     * Beállítja a játékos meccs átlagainak listáját.
+     *
+     * @param matchAverages a játékos meccs átlagainak listája
+     */
     public void setMatchAverages(ArrayList<Double> matchAverages) {
         this.matchAverages = matchAverages;
     }

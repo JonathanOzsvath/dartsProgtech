@@ -109,7 +109,7 @@ public class StatisticController implements Initializable {
      *
      * @param actionEvent esemény
      */
-    public void handleBackButton(ActionEvent actionEvent) throws IOException {
+    public void handleBackButton(ActionEvent actionEvent){
         Statistic.stage.close();
         MainStage.stage.show();
 
@@ -123,6 +123,10 @@ public class StatisticController implements Initializable {
         stage.show();*/
     }
 
+    /**
+     * Táblázat egyes soraiba való kattintás kezelése.
+     * @param event esemény
+     */
     public void tableViewClicked(Event event) {
 //        System.out.println(tableID.getSelectionModel().getSelectedItem().getId());
 //        System.out.println(MainApp.first.getPontok());

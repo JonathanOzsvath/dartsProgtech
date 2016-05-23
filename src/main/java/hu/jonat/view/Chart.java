@@ -11,28 +11,80 @@ import javafx.stage.Stage;
 import java.util.Optional;
 
 /**
- * Diagramm osztály
+ * Diagramm osztály.
  */
 public class Chart {
 
+    /**
+     * Pont string.
+     */
     final static String pont = "Pont";
+    /**
+     * Set string.
+     */
     final static String set = "Set";
+    /**
+     * Leg string.
+     */
     final static String leg = "Leg";
+    /**
+     * Legjobb Leg string.
+     */
     final static String bestLeg = "Legjobb Leg";
+    /**
+     * Előző Leg string.
+     */
     final static String previousLeg = "Előző Leg";
+    /**
+     * Aktuális Leg Átlaga string.
+     */
     final static String currentLeg = "Aktuális Leg átlaga";
+    /**
+     * Aktuális Set átlaga string.
+     */
     final static String currentSet = "Aktuális Set átlaga";
 
+    /**
+     * Az id alapján történik a döntés melyik diagramm hívódik meg.
+     */
     private int id;
+    /**
+     * x tengely.
+     */
     private static Axis xAxis;
+    /**
+     * y tengely.
+     */
     private static Axis yAxis;
+    /**
+     * vonal diagramm.
+     */
     private static LineChart<Number, Number> lineChart;
+    /**
+     * oszlop diagramm.
+     */
     private static BarChart<String, Number> barChart;
+    /**
+     * első játékos adatai.
+     */
     private XYChart.Series seriesFirst;
+    /**
+     * második játékos adatai.
+     */
     private XYChart.Series seriesSecond;
+    /**
+     * scene.
+     */
     private static Scene scene;
+    /**
+     * stage.
+     */
     private static Stage stage;
 
+    /**
+     * Chart osztály konstruktora.
+     * @param id id kiválasztja a diagrammot
+     */
     public Chart(int id) {
         this.id = id;
 
@@ -137,6 +189,13 @@ public class Chart {
         });
     }
 
+    /**
+     *Diagramm beállítása.
+     *
+     * @param chartType diagramm típusa
+     * @param seriesFirst első játékos adatai
+     * @param seriesSecond második játékos adatai
+     */
     public static void setChart(int chartType, XYChart.Series seriesFirst, XYChart.Series seriesSecond){
         seriesFirst.setName(MainApp.first.getNev());
         seriesSecond.setName(MainApp.second.getNev());

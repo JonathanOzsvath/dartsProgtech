@@ -385,6 +385,7 @@ public class MainController implements Initializable {
      * Statisztika gomb eseménykezelése.
      *
      * @param actionEvent esemény
+     * @throws IOException kivétel
      */
     public void statisticView(ActionEvent actionEvent) throws IOException {
         new Statistic();
@@ -400,6 +401,11 @@ public class MainController implements Initializable {
         stage.show();*/
     }
 
+    /**
+     * JSON fájlba mentés filechooser segítségével.
+     *
+     * @param actionEvent esemény
+     */
     public void save(ActionEvent actionEvent) {
         FileChooser fileChooser = new FileChooser();
         FileChooser.ExtensionFilter extensionFilter = new FileChooser.ExtensionFilter("JSON file (*.json)", "*.json");
@@ -457,6 +463,13 @@ public class MainController implements Initializable {
         }
     }
 
+    /**
+     * JSON fájlból olvasás filechooser segítségével.
+     *
+     * @param actionEvent esemény
+     * @throws ParseException JSON parser kivétel
+     * @throws IOException kivétel
+     */
     public void open(ActionEvent actionEvent) throws ParseException, IOException {
         FileChooser fileChooser = new FileChooser();
         FileChooser.ExtensionFilter extensionFilter = new FileChooser.ExtensionFilter("JSON file (*.json)", "*.json");
@@ -510,46 +523,93 @@ public class MainController implements Initializable {
         update();
     }
 
+    /**
+     * Összes statisztika egy diagrammon kezelése.
+     *
+     * @param actionEvent esemény
+     */
     public void menuOsszes(ActionEvent actionEvent) {
         new Chart(0);
     }
 
+    /**
+     * Pont diagramm meghívása.
+     * @param actionEvent esemény
+     */
     public void pontChart(ActionEvent actionEvent) {
         new Chart(1);
     }
 
+    /**
+     * Set diagramm meghívása.
+     * @param actionEvent esemény
+     */
     public void setsChart(ActionEvent actionEvent) {
         new Chart(2);
     }
 
+    /**
+     * Set diagramm meghívása.
+     * @param actionEvent esemény
+     */
     public void legsChart(ActionEvent actionEvent) {
         new Chart(3);
     }
 
+    /**
+     * Legjobb leg diagramm meghívása.
+     * @param actionEvent esemény
+     */
     public void bestLegChart(ActionEvent actionEvent) {
         new Chart(4);
     }
 
+    /**
+     * Előző leg diagramm meghívása.
+     * @param actionEvent esemény
+     */
     public void previousLegChart(ActionEvent actionEvent) {
         new Chart(5);
     }
 
+    /**
+     * Aktuális leg diagramm meghívása.
+     * @param actionEvent esemény
+     */
     public void scurrentLegChart(ActionEvent actionEvent) {
         new Chart(6);
     }
 
+    /**
+     * Aktuális set diagramm meghívása.
+     * @param actionEvent esemény
+     */
     public void scurrentSetChart(ActionEvent actionEvent) {
         new Chart(7);
     }
 
+    /**
+     * Meccs diagramm meghívása.
+     * @param actionEvent esemény
+     */
     public void matchAverageChart(ActionEvent actionEvent) {
         new Chart(8);
     }
 
+    /**
+     * Eldobott nyilak diagramm meghívása.
+     * @param actionEvent esemény
+     */
     public void dartsChart(ActionEvent actionEvent) {
         new Chart(9);
     }
 
+    /**
+     * Fájl létrehozása és kiírása.
+     *
+     * @param content tartalom
+     * @param file elérési út
+     */
     private void SaveFile(String content, File file) {
         try {
             FileWriter fileWriter = null;
@@ -562,6 +622,9 @@ public class MainController implements Initializable {
         }
     }
 
+    /**
+     * A felhasználói felület frissítése.
+     */
     private void update() {
         firstGamerName.setText(MainApp.first.getNev());
         firstGamerPoint.setText(String.valueOf(MainApp.first.getPoint()));
@@ -571,6 +634,10 @@ public class MainController implements Initializable {
 
     }
 
+    /**
+     * Új játék kezdése.
+     * @param actionEvent esemény
+     */
     public void newGame(ActionEvent actionEvent) {
         MainApp.first = new Gamer("1.játékos");
         MainApp.second = new Gamer("2.jákétos");
@@ -580,6 +647,10 @@ public class MainController implements Initializable {
         update();
     }
 
+    /**
+     * Ablak bezárása.
+     * @param actionEvent esemény
+     */
     public void exit(ActionEvent actionEvent) {
         MainStage.stage.close();
     }
