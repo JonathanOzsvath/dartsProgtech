@@ -15,16 +15,16 @@
         <name>jonat</name>
     </organization>
 
-    <url>https://github.com/JonathanOzsvath/darts</url>
+    <url>https://github.com/JonathanOzsvath/dartsProgtech</url>
     <description>A Darts potszámláló program a darts játék eredmény nyílván tartására szolgál.</description>
 
     <scm>
-        <url>https://github.com/JonathanOzsvath/darts</url>
+        <url>https://github.com/JonathanOzsvath/dartsProgtech</url>
         <connection>
-            scm:git:git://github.com/JonathanOzsvath/darts.git
+            scm:git:git://github.com/JonathanOzsvath/dartsProgtech.git
         </connection>
         <developerConnection>
-            scm:git:git@github.com:JonathanOzsvath/darts.git
+            scm:git:git@github.com:JonathanOzsvath/dartsProgtech.git
         </developerConnection>
     </scm>
 
