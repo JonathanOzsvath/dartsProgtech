@@ -1,10 +1,9 @@
 package hu.jonat.model;
 
-import hu.jonat.model.Gamer;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Unit teszt a {@link Gamer} osztályhoz.
@@ -146,7 +145,7 @@ public class GamerTest {
     @Test
     public void testGetCurrentSet2() throws Exception {
         double expected = 0;
-        for (Integer set : gamer.sets) {
+        for (Long set : gamer.sets) {
             expected += set;
         }
         expected = expected / (double) gamer.sets.size();
@@ -169,7 +168,7 @@ public class GamerTest {
     @Test
     public void testGetMatchAverage2() throws Exception {
         double expected = 0;
-        for (Integer match : gamer.pontok) {
+        for (Long match : gamer.pontok) {
             expected += match;
         }
         expected = expected / gamer.pontok.size();
@@ -199,13 +198,13 @@ public class GamerTest {
                 assertEquals(darts + 3, gamer.getDarts());
                 assertEquals(currentLeg, gamer.getCurrentLeg(), 0.0);
                 assertEquals(sets + 1, gamer.sets.size());
-                for (Integer set : gamer.sets) {
+                for (Long set : gamer.sets) {
                     currentSet += set;
                 }
                 currentSet /= gamer.sets.size();
                 assertEquals(currentSet, gamer.getCurrentSet(), 0.0);
                 assertEquals(pontok + 1, gamer.pontok.size());
-                for (Integer match : gamer.pontok) {
+                for (Long match : gamer.pontok) {
                     matchAverage += match;
                 }
                 matchAverage /= (double) gamer.pontok.size();
