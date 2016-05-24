@@ -41,7 +41,7 @@ public class Gamer {
     /**
      * A játékos meccsen dobott pontjainak listája.
      */
-    public ArrayList<Integer> pontok;
+    public ArrayList<Long> pontok;
     /**
      * A játékos legen belül dobott pontjainak listája.
      */
@@ -49,7 +49,7 @@ public class Gamer {
     /**
      * A játékos szetten belül dobott pontjainka listája.
      */
-    public ArrayList<Integer> sets;
+    public ArrayList<Long> sets;
     /**
      * A játékos legjobb leg átlaga.
      */
@@ -91,8 +91,8 @@ public class Gamer {
         leg = 0;
         set = 0;
         darts = 0;
-        pontok = new ArrayList<Integer>();
-        sets = new ArrayList<Integer>();
+        pontok = new ArrayList<Long>();
+        sets = new ArrayList<Long>();
         bestLeg = 0;
         previousLeg = 0;
         currentLeg = 0;
@@ -213,7 +213,7 @@ public class Gamer {
      * Visszaadja a játékos pontjainak a listáját.
      * @return játékos pontjainak listája
      */
-    public ArrayList<Integer> getPontok() {
+    public ArrayList<Long> getPontok() {
         return pontok;
     }
 
@@ -221,7 +221,7 @@ public class Gamer {
      * Beállítja a játékos pontjainak listáját.
      * @param pontok pontok listája
      */
-    public void setPontok(ArrayList<Integer> pontok) {
+    public void setPontok(ArrayList<Long> pontok) {
         this.pontok = pontok;
     }
 
@@ -245,7 +245,7 @@ public class Gamer {
      * Visszaadja a játékos setjeinek a listáját.
      * @return játékos setjeinek listája
      */
-    public ArrayList<Integer> getSets() {
+    public ArrayList<Long> getSets() {
         return sets;
     }
 
@@ -253,7 +253,7 @@ public class Gamer {
      * Beállítja a játékos setjeinek listáját.
      * @param sets pontok listája
      */
-    public void setSets(ArrayList<Integer> sets) {
+    public void setSets(ArrayList<Long> sets) {
         this.sets = sets;
     }
 
@@ -311,7 +311,6 @@ public class Gamer {
         return sum/(darts/3.0);
     }
 
-
     /**
      * Beállítja a játékos aktuális leg átlagát.
      *
@@ -336,8 +335,8 @@ public class Gamer {
      * @return a játékos aktuális szett számolt átlaga
      */
     public double getCurrentSet2() {
-        int tmp = 0;
-        for (Integer set : sets){
+        double tmp = 0;
+        for (Long set : sets){
             tmp += set;
         }
         return tmp/(double)sets.size();
@@ -368,7 +367,7 @@ public class Gamer {
      */
     public double getMatchAverage2() {
         double tmp = 0;
-        for (Integer match : pontok){
+        for (Long match : pontok){
             tmp += match;
             //System.out.println(match);
         }
@@ -414,9 +413,9 @@ public class Gamer {
                 sum += dobottPont;
                 darts += 3;
                 currentLeg = getCurrentLeg2();
-                sets.add(dobottPont);
+                sets.add((long) dobottPont);
                 currentSet = getCurrentSet2();
-                pontok.add(dobottPont);
+                pontok.add((long) dobottPont);
                 matchAverage = getMatchAverage2();
                 matchAverages.add(matchAverage);
             }

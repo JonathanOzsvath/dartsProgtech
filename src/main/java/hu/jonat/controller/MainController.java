@@ -1,11 +1,5 @@
 package hu.jonat.controller;
 
-import java.io.*;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.Optional;
-import java.util.ResourceBundle;
-
 import hu.jonat.model.Gamer;
 import hu.jonat.view.Chart;
 import hu.jonat.view.MainApp;
@@ -21,7 +15,15 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import sun.applet.Main;
+
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.Optional;
+import java.util.ResourceBundle;
 
 /**
  * A MainStage osztály controller osztálya.
@@ -491,9 +493,9 @@ public class MainController implements Initializable {
         MainApp.first.setLeg(Integer.parseInt(firstGamerJSON.get("leg").toString()));
         MainApp.first.setSum(Integer.parseInt(firstGamerJSON.get("sum").toString()));
         MainApp.first.setDarts(Integer.parseInt(firstGamerJSON.get("darts").toString()));
-        MainApp.first.setPontok((ArrayList<Integer>) firstGamerJSON.get("pontok"));
+        MainApp.first.setPontok((ArrayList<Long>) firstGamerJSON.get("pontok"));
         MainApp.first.setLegs((ArrayList<Integer>) firstGamerJSON.get("legs"));
-        MainApp.first.setSets((ArrayList<Integer>) firstGamerJSON.get("sets"));
+        MainApp.first.setSets((ArrayList<Long>) firstGamerJSON.get("sets"));
         MainApp.first.setBestLeg(Double.parseDouble(firstGamerJSON.get("bestLeg").toString()));
         MainApp.first.setPreviousLeg(Double.parseDouble(firstGamerJSON.get("previousLeg").toString()));
         MainApp.first.setCurrentLeg(Double.parseDouble(firstGamerJSON.get("currentLeg").toString()));
@@ -507,9 +509,9 @@ public class MainController implements Initializable {
         MainApp.second.setLeg(Integer.parseInt(secondGamerJSON.get("leg").toString()));
         MainApp.second.setSum(Integer.parseInt(secondGamerJSON.get("sum").toString()));
         MainApp.second.setDarts(Integer.parseInt(secondGamerJSON.get("darts").toString()));
-        MainApp.second.setPontok((ArrayList<Integer>) secondGamerJSON.get("pontok"));
+        MainApp.second.setPontok((ArrayList<Long>) secondGamerJSON.get("pontok"));
         MainApp.second.setLegs((ArrayList<Integer>) secondGamerJSON.get("legs"));
-        MainApp.second.setSets((ArrayList<Integer>) secondGamerJSON.get("sets"));
+        MainApp.second.setSets((ArrayList<Long>) secondGamerJSON.get("sets"));
         MainApp.second.setBestLeg(Double.parseDouble(secondGamerJSON.get("bestLeg").toString()));
         MainApp.second.setPreviousLeg(Double.parseDouble(secondGamerJSON.get("previousLeg").toString()));
         MainApp.second.setCurrentLeg(Double.parseDouble(secondGamerJSON.get("currentLeg").toString()));

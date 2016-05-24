@@ -206,19 +206,20 @@ public class Chart {
                 yAxis = new NumberAxis();
                 lineChart = new LineChart<Number, Number>(xAxis, yAxis);
                 lineChart.getData().addAll(seriesFirst, seriesSecond);
-                scene = new Scene(lineChart, 480, 640);
+                scene = new Scene(lineChart, 640, 480);
                 break;
             case 2:
                 xAxis = new CategoryAxis();
                 yAxis = new NumberAxis();
                 barChart = new BarChart<String, Number>(xAxis,yAxis);
                 barChart.getData().addAll(seriesFirst, seriesSecond);
-                scene = new Scene(barChart, 640, 640);
+                scene = new Scene(barChart, 480, 640);
                 break;
         }
 
         stage.setScene(scene);
         stage.show();
+        stage.setResizable(false);
     }
 
 }
